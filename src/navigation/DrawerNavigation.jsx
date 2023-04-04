@@ -18,7 +18,7 @@ const DrawerNavigation = () => {
             backBehavior='history'
             initialRouteName="home"
             screenOptions={{
-                headerShown: true
+                headerShown: false
             }}
             drawerContent={props => <CustomDrawer {...props} />}
         >

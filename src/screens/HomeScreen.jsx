@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Dimensions, Image, ScrollView, ImageBackground } from "react-native";
+import { Text, View, StyleSheet, ImageBackground } from "react-native";
 import { useSelector } from 'react-redux';
 import hero from '../images/hero-background.png'
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 
 function HomeScreen({ navigation }) {
@@ -12,6 +13,9 @@ function HomeScreen({ navigation }) {
                 source={hero}
                 style={styles.backgroundHeroImage}
             >
+                <Ionicons name="menu-outline" size={40} color="white" onPress={() => navigation.openDrawer()} 
+                style={{position:'absolute', top:0, left:0}}/>
+
                 <View style={styles.exploreSection}>
                     <Text style={styles.exploreTitle}>Live the emotion of the manga</Text>
                     <Text style={{ color: '#FFF' }}>Find the perfect manga for you</Text>
@@ -38,13 +42,13 @@ const styles = StyleSheet.create({
         height: 204,
         gap: 25,
         margin: 0,
-        alignItems: 'center',  
+        alignItems: 'center',
     },
     exploreTitle: {
         fontWeight: 'bold',
         fontSize: 35,
         textShadowColor: '#00008b',
-        textShadowOffset: {width: 1, height: 8},
+        textShadowOffset: { width: 1, height: 8 },
         textShadowRadius: 50,
         color: '#FFF',
         textAlign: 'center'
