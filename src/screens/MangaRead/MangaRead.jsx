@@ -11,14 +11,7 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 function Mangas() {
-    // const [mangas, setMangas] = useState([]);
-    // const [originalMangas, setOriginalMangas] = useState([]);
-    // const [categorias, setCate] = useState([]);
-    // const [searchQuery, setSearchQuery] = useState('');
-    // const [loading, setLoading] = useState(false);
-    // const [currentPage, setCurrentPage] = useState(1);
-    // const [hasMore, setHasMore] = useState(true);
-
+    
     return (
         <ScrollView style={styles.mangas}>
             <MangasTitle/>

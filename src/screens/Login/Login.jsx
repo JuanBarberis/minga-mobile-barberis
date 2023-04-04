@@ -20,7 +20,7 @@ const Login = () => {
             await AsyncStorage.setItem('token', "1234asd")
 
         } catch (e) {
-            // saving error
+          
             console.log(e)
         }
     }
@@ -28,7 +28,7 @@ const Login = () => {
         try {
             await AsyncStorage.setItem('token', "")
         } catch (e) {
-            // saving error
+            
             console.log(e)
         }
     }
@@ -37,7 +37,7 @@ const Login = () => {
             const value = await AsyncStorage.getItem('token')
         } catch (e) {
             console.log(e)
-            // error reading value
+            
         }
     }
 
@@ -65,15 +65,15 @@ const Login = () => {
                 res.data.user.is_admin ? (admin = true) : (admin = false)
                 res.data.user.is_author ? (author = true) : (author = false)
 
-                user = res.data.user //no se que le tenes q asignar a user
+                user = res.data.user 
 
-                token = res.data.token //asignas valora token
+                token = res.data.token 
 
 
                 dispatch(userAction.change_user_status({ status: true }))
                 dispatch(userAction.user_action({ data: res.data.user }))
             })
-            await AsyncStorage.setItem('token', token) // usas el valor de token
+            await AsyncStorage.setItem('token', token) 
 
         } catch (error) {
             console.log('ERROR' + error)
@@ -97,8 +97,6 @@ const Login = () => {
                         <Text style={styles.legend}>Password</Text>
                         <TextInput secureTextEntry={true} name="password" id="password" style={styles.input} onChangeText={inputText => setPassword(inputText)} />
                     </View>
-                    {/* <Button title={'SingIn'} onPress={handleSignIn} */}
-                    {/* style={styles.sign} /> */}
                     <TouchableOpacity title="SingIn" onPress={handleSignIn} style={styles.sign}  >
                         <Text style={styles.signText}>SignIn</Text>
                     </TouchableOpacity>
