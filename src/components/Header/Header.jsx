@@ -6,7 +6,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { useNavigation } from "@react-navigation/native";
 
 
-const Header= ({ tittle }) => {
+const Header = ({ tittle }) => {
 
     const navigation = useNavigation()
 
@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
     },
     text: {
         color: "white",
-        fontSize: 20,
-        marginLeft: 5
+        fontSize: 22,
+        marginLeft: 20,
+
     }
 })

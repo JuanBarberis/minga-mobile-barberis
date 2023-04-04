@@ -6,10 +6,8 @@ import Mangas from '../screens/MangaRead/MangaRead';
 import MangaDetails from '../screens/MangaDetails/MangaDetails';
 
 
-//SI LA PANTALLA QUE QUIERO AGREGAR NECEISTO MOSTRARLA EN EL DRAWER, TENGO QUE AGREGARLA EN EL activeUserDrawer Y EL activeUser.
-//SI LA PANTALLA QUE QUIERO AGERGAR NO TENGO QUE MOSTRARLA EN EL DRAWER, TENGO QUE AGERGARLA SOLO EN activeUser
 
-//AGREGAR PANTALLAS QUE NECESITO MOSTRAR EN EL DRAWER DE USUARIO ACTIVO
+// PANTALLAS QUE NECESITO MOSTRAR EN EL DRAWER DE USUARIO ACTIVO
 export const activeUserDrawer = [
     {
         component: Mangas,
@@ -18,7 +16,7 @@ export const activeUserDrawer = [
   
 ]
 
-//AGREGAR PANTALLAS QUE NECESITO DE USUARIO ACTIVO
+// PANTALLAS QUE NECESITO DE USUARIO ACTIVO
 export const activeUser = [
     {
         component: Chapters,

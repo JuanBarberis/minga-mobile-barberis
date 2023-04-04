@@ -64,10 +64,10 @@ function Chapter() {
     }, [page])
 
     const navigation = useNavigation()
-    function handleRead(e,id){
-        dispatch(chapterClicked({state: true}))
-        setTimeout( () => {
-            navigation.navigate('Chapter',{chapterId: id, mangaId: mangaId});
+    function handleRead(e, id) {
+        dispatch(chapterClicked({ state: true }))
+        setTimeout(() => {
+            navigation.navigate('Chapter', { chapterId: id, mangaId: mangaId });
         }, 100)
     }
 
@@ -87,39 +87,39 @@ function Chapter() {
                 </View> : <></>
             }
             {
-                checkChapter ? 
-                <View style={{paddingBottom: 25}}>
-                    {
-                        chapters?.length > 0
-                            ?
-                            chapters.map((chapter, i) => {
-                                return (
-                                    <View style={styles.sectionChapter} key={i}>
-                                        <Image style={styles.selecChapter} source={{ uri: chapter.cover_photo }} alt={chapter.title} />
-                                        <View style={styles.orderChapter}>
-                                            <Text>Chapter #{chapter.order}</Text>
-                                            <View style={styles.comentChapter}>
-                                                <Image style={styles.comentChapterImg} source={IconComent} alt="icono-coment" />
-                                                <Text>169</Text>
+                checkChapter ?
+                    <View style={{ paddingBottom: 25 }}>
+                        {
+                            chapters?.length > 0
+                                ?
+                                chapters.map((chapter, i) => {
+                                    return (
+                                        <View style={styles.sectionChapter} key={i}>
+                                            <Image style={styles.selecChapter} source={{ uri: chapter.cover_photo }} alt={chapter.title} />
+                                            <View style={styles.orderChapter}>
+                                                <Text>Chapter #{chapter.order}</Text>
+                                                <View style={styles.comentChapter}>
+                                                    <Image style={styles.comentChapterImg} source={IconComent} alt="icono-coment" />
+                                                    <Text>169</Text>
+                                                </View>
                                             </View>
+                                            <TouchableOpacity style={styles.btnRead} onPress={(event) => handleRead(event, chapter._id)}><Text style={styles.btnReadText}>Read</Text></TouchableOpacity>
                                         </View>
-                                        <TouchableOpacity style={styles.btnRead} onPress={(event) => handleRead(event, chapter._id)}><Text style={styles.btnReadText}>Read</Text></TouchableOpacity>
-                                    </View>
-                                )
-                            })
-                            :
-                            <Text>No Chapter founded</Text>
-                    }
-                    <View style={styles.divChapter}>
-                        { page===1 ? <></> : <TouchableOpacity style={styles.btnChapter} onPress={() => { setPage(page - 1) }}>
-                            <Text style={styles.btnReadText}>Prev</Text>
-                        </TouchableOpacity> }
-                        { chapters.length === 4 ? <TouchableOpacity style={styles.btnChapter} onPress={() => { setPage(page + 1) }}>
-                            <Text style={styles.btnReadText}>Next</Text>
-                        </TouchableOpacity> : <></> }
-                    </View>
+                                    )
+                                })
+                                :
+                                <Text>No Chapter founded</Text>
+                        }
+                        <View style={styles.divChapter}>
+                            {page === 1 ? <></> : <TouchableOpacity style={styles.btnChapter} onPress={() => { setPage(page - 1) }}>
+                                <Text style={styles.btnReadText}>Prev</Text>
+                            </TouchableOpacity>}
+                            {chapters.length === 4 ? <TouchableOpacity style={styles.btnChapter} onPress={() => { setPage(page + 1) }}>
+                                <Text style={styles.btnReadText}>Next</Text>
+                            </TouchableOpacity> : <></>}
+                        </View>
 
-                </View> : <></>
+                    </View> : <></>
             }
         </>
     )

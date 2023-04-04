@@ -42,7 +42,7 @@ function MangaDetails() {
 
     return (
         <>
-            <Header tittle={manga.title} styles={{alignItems:'center'}} />
+            <Header tittle={manga.title}  />
 
             
             <ScrollView style={{ minHeight: windowHeight }}>

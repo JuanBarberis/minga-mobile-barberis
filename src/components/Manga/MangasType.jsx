@@ -1,5 +1,5 @@
 import React , { useState, useEffect } from 'react'
-import { Text, View, Image, Button , TouchableOpacity} from 'react-native'
+import { Text, View, Image, TouchableOpacity} from 'react-native'
 import { StyleSheet } from 'react-native'
 import axios from 'axios'
 import { useDispatch , useSelector} from 'react-redux'

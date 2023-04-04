@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import mangasActions from '../../store/Mangas/actions'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native'
-import { ScrollView } from 'react-native'
 import { useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native';
 import mangaClickActions from '../../store/MangaClicked/actions'
@@ -101,6 +100,7 @@ const styles = StyleSheet.create({
         minHeight: '100%',
         display: 'flex',
         alignItems: 'center',
+     
     },
     card: {
         display: 'flex',
@@ -204,6 +204,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: '#EBEBEB',
         textDecorationLine: 'none',
+       
     }
 })
 

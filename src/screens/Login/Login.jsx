@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TextInput, ScrollView, Button } from "react-native";
+import { View, Text, StyleSheet, TextInput, ScrollView, Button, TouchableOpacity } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useDispatch, useSelector } from "react-redux";
 import userAction from "../../store/User/actions";
@@ -21,6 +21,7 @@ const Login = () => {
 
         } catch (e) {
             // saving error
+            console.log(e)
         }
     }
     const deleteData = async () => {
@@ -28,12 +29,14 @@ const Login = () => {
             await AsyncStorage.setItem('token', "")
         } catch (e) {
             // saving error
+            console.log(e)
         }
     }
     const getData = async () => {
         try {
             const value = await AsyncStorage.getItem('token')
         } catch (e) {
+            console.log(e)
             // error reading value
         }
     }
@@ -94,8 +97,11 @@ const Login = () => {
                         <Text style={styles.legend}>Password</Text>
                         <TextInput secureTextEntry={true} name="password" id="password" style={styles.input} onChangeText={inputText => setPassword(inputText)} />
                     </View>
-                <Button title={'SingIn'} onPress={handleSignIn}
-                style={styles.sign} />
+                    {/* <Button title={'SingIn'} onPress={handleSignIn} */}
+                    {/* style={styles.sign} /> */}
+                    <TouchableOpacity title="SingIn" onPress={handleSignIn} style={styles.sign}  >
+                        <Text style={styles.signText}>SignIn</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </ScrollView>
@@ -186,7 +192,16 @@ const styles = StyleSheet.create({
         margin: 'auto',
         borderRadius: 5,
     },
-  
+    signText: {
+        color: '#EBEBEB',
+        fontWeight: '700',
+        fontSize: 14,
+        lineHeight: 17,
+        letterSpacing: 0.05,
+        width: '100%',
+        textAlign: 'center',
+    },
+
     loginText: {
         textAlign: 'center'
     },
